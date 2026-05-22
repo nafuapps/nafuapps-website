@@ -1,23 +1,31 @@
 ---
-import SecondaryButton from './secondaryButton.astro';
+import SecondaryButton from "./secondaryButton.astro"
 
 interface Props {
-  header: string;
-  slashedPrice: string;
-  price: string;
-  timeline: string;
-  bestTags: string[];
-  includeList: string[];
-  popularTag?: boolean; // Optional, can be used for avatar image
+  header: string
+  slashedPrice: string
+  price: string
+  timeline: string
+  bestTags: string[]
+  includeList: string[]
+  popularTag?: boolean // Optional, can be used for avatar image
 }
 
-const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag } = Astro.props;
+const {
+  header,
+  slashedPrice,
+  price,
+  timeline,
+  bestTags,
+  includeList,
+  popularTag,
+} = Astro.props
 ---
 
-<div class="plan-card">
+<div class=`plan-card ${popularTag ? "popular-card" : ""}`>
   <div class="plan-topline">
     <span class="plan-header">{header}</span>
-    {popularTag?<span class="plan-popular">MOST POPULAR</span>:<></>}
+    {popularTag && <span class="plan-popular">MOST POPULAR</span>}
   </div>
   <div class="plan-price">
     <span class="plan-slashed-price">{slashedPrice}</span>
@@ -34,7 +42,10 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     {includeList.map((item) => <li class="plan-include-item">{item}</li>)}
   </ul>
   <div class="plan-button">
-    <SecondaryButton text="Contact Now" linkUrl="document.getElementById('contact').scrollIntoView()"/>
+    <SecondaryButton
+      text="Contact Now"
+      linkUrl="document.getElementById('contact').scrollIntoView()"
+    />
   </div>
 </div>
 
@@ -42,7 +53,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
   .plan-card {
     background-color: var(--white1);
     border-radius: 16px;
-    padding: 32px ;
+    padding: 40px 24px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -53,7 +64,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    gap:16px;
+    gap: 16px;
   }
   .plan-header {
     font-size: var(--d3);
@@ -63,12 +74,15 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
   }
   .plan-popular {
     background-color: var(--primary);
-    border-radius: 16px;
+    border-radius: 0px 8px 0px 8px;
     padding: 8px 16px;
     font-size: var(--d5);
-    line-height: 16px;
+    line-height: 21px;
+    font-weight: 400;
     color: var(--white0);
-    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .plan-price {
     display: flex;
@@ -89,7 +103,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     color: var(--black0);
     font-weight: 600;
   }
-  .plan-gst{
+  .plan-gst {
     font-size: var(--d5);
     line-height: 21px;
     font-weight: 400;
@@ -135,7 +149,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
   .plan-include-item {
     list-style-type: disc;
     list-style-position: inside;
-    font-size: var(--d4);
+    font-size: var(--d5);
     line-height: 24px;
     font-weight: 400;
     color: var(--black0);
@@ -149,13 +163,18 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     margin-top: auto;
   }
 
+  .popular-card {
+    position: relative;
+    border: 4px solid var(--primary);
+  }
+
   @media screen and (max-width: 1024px) {
     .plan-card {
       padding: 24px;
-      gap:24px;
+      gap: 24px;
     }
-    .plan-topline{
-      gap:8px;
+    .plan-topline {
+      gap: 8px;
     }
     .plan-header {
       font-size: var(--m3);
@@ -192,7 +211,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
       padding: 6px 12px;
     }
     .plan-include-item {
-      font-size: var(--m4);
+      font-size: var(--m5);
       line-height: 24px;
     }
   }

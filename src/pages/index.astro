@@ -36,7 +36,7 @@ import etBG from "../images/ET_BG.png"
 import gjBG from "../images/GJ_BG.png"
 import cmBG from "../images/CM_BG.png"
 import person1 from "../images/person1.jpeg"
-import person2 from "../images/person2.jpeg"
+import person2 from "../images/person2.png"
 import person3 from "../images/person3.jpeg"
 import landingFrame from "../images/LandingFrame.png"
 import SecondaryButton from "../components/secondaryButton.astro"
@@ -161,44 +161,42 @@ import SecondaryButton from "../components/secondaryButton.astro"
             We enable Indian entrepreneurs to achieve their lifelong dreams by
             providing <span id="about-pop">high-quality IT solutions.</span>
           </span>
-          <div class="about-content">
-            <div class="about-reasons">
-              <ReasonCard
-                header="EXPERIENCED"
-                subtitle="We are a dedicated team of developers, designers & product managers from Tier-1 colleges who have worked at some of the biggest startups in India"
-                reasonUrl={expIcon}
-              />
-              <ReasonCard
-                header="AFFORDABLE"
-                subtitle="We know it is difficult to start a business and the initial phases are the most crucial part of the journey. That’s why we provide the most affordable services in the market"
-                reasonUrl={affIcon}
-              />
-              <ReasonCard
-                header="PROFESSIONAL"
-                subtitle="We believe mutual trust comes from transparency. And that’s why our core values are based on honesty, empathy, punctuality and professionalism."
-                reasonUrl={proIcon}
-              />
-            </div>
-            <div class="about-testimonials">
-              <TestimonialCard
-                header="Very approachable, simple and value for money branding service.. Loved it!"
-                subtitle1="VRITI SHARMA, DELHI"
-                subtitle2="Beauty Parlor Manager"
-                avatarUrl={person1}
-              />
-              <TestimonialCard
-                header="I asked Nafu apps to make a website for my shop.. now more customers are visiting."
-                subtitle1="JAGRIT KUMAR, AGRA"
-                subtitle2="Supermarket Owner"
-                avatarUrl={person2}
-              />
-              <TestimonialCard
-                header="They built an app for my startup in 2 months. Works perfect, no bugs and awesome customer support."
-                subtitle1="AASHISH P, BENGALURU"
-                subtitle2="Healthcare Startup Founder"
-                avatarUrl={person3}
-              />
-            </div>
+          <div class="about-reasons">
+            <ReasonCard
+              header="EXPERIENCED"
+              subtitle="We are a dedicated team of developers, designers & product managers from Tier-1 colleges who have worked at some of the biggest startups in India"
+              reasonUrl={expIcon}
+            />
+            <ReasonCard
+              header="AFFORDABLE"
+              subtitle="We know it is difficult to start a business and the initial phases are the most crucial part of the journey. That’s why we provide the most affordable services in the market"
+              reasonUrl={affIcon}
+            />
+            <ReasonCard
+              header="PROFESSIONAL"
+              subtitle="We believe mutual trust comes from transparency. And that’s why our core values are based on honesty, empathy, punctuality and professionalism."
+              reasonUrl={proIcon}
+            />
+          </div>
+          <div class="about-testimonials">
+            <TestimonialCard
+              header=`\"Very approachable, simple and value for money branding service.. Loved it!\"`
+              subtitle1="VRITI SHARMA, DELHI"
+              subtitle2="Beauty Parlor Manager"
+              avatarUrl={person1}
+            />
+            <TestimonialCard
+              header=`\"I asked Nafu apps to make a website for my preschool.. now more parents are visiting for enrollment.\"`
+              subtitle1="FUNG ROJEE, ASSAM"
+              subtitle2="Preschool Owner"
+              avatarUrl={person2}
+            />
+            <TestimonialCard
+              header=`\"They built an app for my startup in 2 months. Works perfect, no bugs and awesome customer support.\"`
+              subtitle1="AASHISH P, BENGALURU"
+              subtitle2="Healthcare Startup Founder"
+              avatarUrl={person3}
+            />
           </div>
           <div class="about-stats">
             <TrustStat header="13+" subtitle="Yrs of Experience" />
@@ -220,14 +218,15 @@ import SecondaryButton from "../components/secondaryButton.astro"
               header="WEBSITE DEVELOPMENT"
               subtitle="Create amazing professional websites to quickly showcase your business online"
               tags={["Portfolio", "Online Shop", "Blog"]}
-              numberStars={4}
+              numberStars={5}
             />
             <ServiceCard
               iconUrl={appIcon}
               header="MOBILE & WEB APP DEVELOPMENT"
               subtitle="Build scalable mobile and web applications to interact with your customers"
-              tags={["Startup MVP Apps", "B2B SaaS", "E-Commerce"]}
+              tags={["Mobile App", "SaaS Product", "E-Commerce App"]}
               numberStars={5}
+              highRated
             />
             <ServiceCard
               iconUrl={uiuxIcon}
@@ -329,7 +328,9 @@ import SecondaryButton from "../components/secondaryButton.astro"
         <div class="section" id="process">
           <span class="section-header">OUR PROCESS</span>
           <span class="section-title"
-            >We follow a <span id="process-pop">simple transaction system</span>
+            >We follow a <span id="process-pop"
+              >simple collaboration process</span
+            >
             that works great for both the parties involved - you and us.</span
           >
           <div class="process-content">
@@ -360,7 +361,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
             <ProcessCard
               title="Close"
               iconUrl={closeIcon}
-              subtitle="Deliver completed project files with a live demo and provide post launch support"
+              subtitle="Deliver completed project with a live demo and provide post launch support"
               outcomeText="Project launch & final handover"
               paymentTag="50% final payment"
               step={4}
@@ -514,6 +515,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
     margin-left: 48px;
     margin-right: 48px;
     z-index: 10;
+    border: 1px solid var(--primary);
   }
   .header-left {
     display: flex;
@@ -690,16 +692,9 @@ import SecondaryButton from "../components/secondaryButton.astro"
     text-align: center;
     width: 95%;
   }
-  .about-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-  }
   .about-reasons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     gap: 32px;
     flex: 1;
@@ -709,7 +704,9 @@ import SecondaryButton from "../components/secondaryButton.astro"
     flex-direction: column;
     justify-content: center;
     gap: 32px;
-    padding: 0px 16px;
+    padding: 32px;
+    border: 1px solid var(--primary);
+    border-radius: 16px;
     flex: 1;
   }
   .about-stats {
@@ -746,6 +743,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
   .process-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 24px;
   }
   .works-content {
@@ -802,7 +800,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
     }
     .section-header,
     .section-title,
-    .about-content,
     .about-stats,
     .services-content,
     .pricing-plans,
@@ -813,6 +810,13 @@ import SecondaryButton from "../components/secondaryButton.astro"
     .contact-social,
     .contact-footer {
       max-width: 1396px;
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .process-content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
     }
   }
 
@@ -929,14 +933,12 @@ import SecondaryButton from "../components/secondaryButton.astro"
       font-size: var(--m2);
       line-height: 36px;
     }
-    .about-content {
-      padding: 0px;
-      gap: 48px;
+    .about-reasons {
       flex-direction: column;
     }
     .about-testimonials {
-      padding: 0px;
-      gap: 24px;
+      padding: 16px;
+      gap: 16px;
     }
     .about-stats {
       display: grid;
@@ -947,7 +949,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
       display: flex;
       flex-direction: column;
       justify-content: start;
-      align-items: center;
     }
     .pricing-plans {
       grid-template-columns: repeat(1, 1fr);
