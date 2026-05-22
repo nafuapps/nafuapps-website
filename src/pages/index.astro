@@ -1,48 +1,61 @@
 ---
-import "@fontsource-variable/montserrat";
-import ActionButton from "../components/actionButton.astro";
-import PlanCard from "../components/planCard.astro";
-import PrimaryButton from "../components/primaryButton.astro";
-import ProcessCard from "../components/processCard.astro";
-import ReasonCard from "../components/reasonCard.astro";
-import ServiceCard from "../components/serviceCard.astro";
-import TestimonialCard from "../components/testimonialCard.astro";
-import TrustStat from "../components/trustStat.astro";
-import arrow from "../images/Arrow.png";
-import mail from "../images/Mail.png";
-import phone from "../images/Phone.png";
-import menu from "../images/Menu.png";
-import brandLogo from "../images/Logo.png";
-import brandName from "../images/BrandName.png";
-import stripStar from "../images/StripStar.png";
-import github from "../images/Github.png";
-import linkedin from "../images/LinkedIn.webp";
-import upwork from "../images/Upwork.webp";
-import fiverr from "../images/Fiverr.png";
-import expIcon from "../images/ExpIcon.png";
-import proIcon from "../images/ProIcon.png";
-import affIcon from "../images/AffIcon.png";
-import connectIcon from "../images/ConnectIcon.png";
-import commitIcon from "../images/CommitIcon.png";
-import createIcon from "../images/CreateIcon.png";
-import closeIcon from "../images/CloseIcon.png";
-import websiteIcon from "../images/WebsiteIcon.png";
-import appIcon from "../images/AppIcon.png";
-import uiuxIcon from "../images/UiUxIcon.png";
-import productIcon from "../images/ProductIcon.png";
-import pmBG from "../images/PM_BG.png";
-import fwBG from "../images/FW_BG.png";
-import etBG from "../images/ET_BG.png";
-import gjBG from "../images/GJ_BG.png";
-import cmBG from "../images/CM_BG.png";
-import person1 from "../images/person1.jpeg";
-import person2 from "../images/person2.jpeg";
-import person3 from "../images/person3.jpeg";
-import landingFrame from "../images/LandingFrame.png";
+import { Font } from "astro:assets"
+import ActionButton from "../components/actionButton.astro"
+import PlanCard from "../components/planCard.astro"
+import PrimaryButton from "../components/primaryButton.astro"
+import ProcessCard from "../components/processCard.astro"
+import ReasonCard from "../components/reasonCard.astro"
+import ServiceCard from "../components/serviceCard.astro"
+import TestimonialCard from "../components/testimonialCard.astro"
+import TrustStat from "../components/trustStat.astro"
+import arrow from "../images/Arrow.png"
+import mail from "../images/Mail.png"
+import phone from "../images/Phone.png"
+import menu from "../images/Menu.png"
+import brandLogo from "../images/Logo.png"
+import brandName from "../images/BrandName.png"
+import stripStar from "../images/StripStar.png"
+import github from "../images/Github.png"
+import linkedin from "../images/LinkedIn.webp"
+import upwork from "../images/Upwork.webp"
+import fiverr from "../images/Fiverr.png"
+import expIcon from "../images/ExpIcon.png"
+import proIcon from "../images/ProIcon.png"
+import affIcon from "../images/AffIcon.png"
+import connectIcon from "../images/ConnectIcon.png"
+import commitIcon from "../images/CommitIcon.png"
+import createIcon from "../images/CreateIcon.png"
+import closeIcon from "../images/CloseIcon.png"
+import websiteIcon from "../images/WebsiteIcon.png"
+import appIcon from "../images/AppIcon.png"
+import uiuxIcon from "../images/UiUxIcon.png"
+import productIcon from "../images/ProductIcon.png"
+import pmBG from "../images/PM_BG.png"
+import fwBG from "../images/FW_BG.png"
+import etBG from "../images/ET_BG.png"
+import gjBG from "../images/GJ_BG.png"
+import cmBG from "../images/CM_BG.png"
+import person1 from "../images/person1.jpeg"
+import person2 from "../images/person2.jpeg"
+import person3 from "../images/person3.jpeg"
+import landingFrame from "../images/LandingFrame.png"
 ---
 
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69SCE1MPJV"
+    ></script>
+    <script>
+      let w = window as any
+      w.dataLayer = w.dataLayer || []
+      function gtag(p0: string, p1: Date | string) {
+        w.dataLayer.push(arguments)
+      }
+      gtag("js", new Date())
+      gtag("config", "G-69SCE1MPJV")
+    </script>
+    <Font cssVariable="--font-montserrat" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
@@ -429,26 +442,26 @@ import landingFrame from "../images/LandingFrame.png";
 </html>
 
 <script>
-  const menuList = document.getElementById("menu-list");
-  const menuButton = document.getElementById("menu-button");
+  const menuList = document.getElementById("menu-list")
+  const menuButton = document.getElementById("menu-button")
 
   //Menu Button hide and show toggle
   menuButton?.addEventListener("click", () => {
-    menuList?.classList.toggle("hide-menu");
-  });
+    menuList?.classList.toggle("hide-menu")
+  })
   //Clicking menu item hides the menu
   menuList?.addEventListener("click", () => {
-    menuList.classList.add("hide-menu");
-  });
+    menuList.classList.add("hide-menu")
+  })
   //clicking outside the menu hides the menu
   document.addEventListener("click", (event) => {
     if (
       !menuButton?.contains(event.target as Node) &&
       !menuList?.contains(event.target as Node)
     ) {
-      menuList?.classList.add("hide-menu");
+      menuList?.classList.add("hide-menu")
     }
-  });
+  })
 </script>
 
 <style>
@@ -486,7 +499,7 @@ import landingFrame from "../images/LandingFrame.png";
   body {
     padding: 0px;
     margin: 0px;
-    font-family: "Montserrat Variable";
+    font-family: var(--font-montserrat);
   }
   .main-content {
     width: 100%;
