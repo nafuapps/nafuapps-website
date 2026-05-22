@@ -8,7 +8,7 @@ interface Props {
   timeline: string;
   bestTags: string[];
   includeList: string[];
-  popularTag: boolean; // Optional, can be used for avatar image
+  popularTag?: boolean; // Optional, can be used for avatar image
 }
 
 const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag } = Astro.props;
@@ -46,14 +46,12 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
     gap: 32px;
   }
   .plan-topline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
     width: 100%;
     gap:16px;
   }
@@ -76,7 +74,6 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: start;
     gap: 0px;
   }
   .plan-slashed-price {
@@ -132,7 +129,6 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: start;
     gap: 12px;
   }

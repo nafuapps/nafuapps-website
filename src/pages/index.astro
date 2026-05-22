@@ -13,13 +13,12 @@ import arrow from "../images/Arrow.png"
 import mail from "../images/Mail.png"
 import phone from "../images/Phone.png"
 import menu from "../images/Menu.png"
-import brandLogo from "../images/Logo.png"
 import brandName from "../images/BrandName.png"
 import stripStar from "../images/StripStar.png"
 import github from "../images/Github.png"
 import linkedin from "../images/LinkedIn.webp"
-import upwork from "../images/Upwork.webp"
-import fiverr from "../images/Fiverr.png"
+// import upwork from "../images/Upwork.webp"
+// import fiverr from "../images/Fiverr.png"
 import expIcon from "../images/ExpIcon.png"
 import proIcon from "../images/ProIcon.png"
 import affIcon from "../images/AffIcon.png"
@@ -79,7 +78,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
           class="header-left"
           onclick="document.getElementById('main').scrollIntoView()"
         >
-          <Image src={brandLogo} alt="NaFu Apps Logo" class="brandLogo" />
           <Image src={brandName} alt="NaFu Apps Brand Name" class="brandName" />
         </div>
         <div class="header-right hide-menu" id="menu-list">
@@ -268,7 +266,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
                 "1 month post handover support",
                 "Responsive design",
               ]}
-              popularTag={false}
             />
             <PlanCard
               header="STANDARD"
@@ -284,7 +281,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
                 "3 month post handover support",
                 "1 round of requirement change",
               ]}
-              popularTag={true}
+              popularTag
             />
             <PlanCard
               header="PREMIUM"
@@ -301,7 +298,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
                 "2 rounds of requirement change",
                 "24x7 availability for client sync-up",
               ]}
-              popularTag={false}
             />
           </div>
           <ol class="pricing-footer">
@@ -485,8 +481,8 @@ import SecondaryButton from "../components/secondaryButton.astro"
     --d3: 22px;
     --d4: 16px;
     --d5: 14px;
-    --m1: 36px;
-    --m2: 28px;
+    --m1: 32px;
+    --m2: 26px;
     --m3: 20px;
     --m4: 16px;
     --m5: 13px;
@@ -532,7 +528,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
     width: 32px;
   }
   .brandName {
-    height: 20px;
+    height: 32px;
     width: auto;
   }
   .header-right {
@@ -704,7 +700,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
   .about-reasons {
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: center;
     gap: 32px;
     flex: 1;
@@ -712,7 +707,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
   .about-testimonials {
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: center;
     gap: 32px;
     padding: 0px 16px;
@@ -740,7 +734,6 @@ import SecondaryButton from "../components/secondaryButton.astro"
   .pricing-footer {
     display: flex;
     flex-direction: column;
-    align-items: start;
     justify-content: start;
     gap: 8px;
     padding: 0px 48px;
@@ -838,7 +831,7 @@ import SecondaryButton from "../components/secondaryButton.astro"
       width: 24px;
     }
     .brandName {
-      height: 16px;
+      height: 24px;
       width: auto;
     }
     .header-right {
