@@ -1,10 +1,10 @@
 ---
 interface Props {
-  text: string;
-  linkUrl: string;
+  text: string
+  linkUrl: string
 }
 
-const { text, linkUrl } = Astro.props;
+const { text, linkUrl } = Astro.props
 ---
 
 <div class="primary-button" onclick={linkUrl}>
@@ -31,7 +31,7 @@ const { text, linkUrl } = Astro.props;
     background-color: var(--primary-dark);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .primary-button {
       padding: 8px 20px;
       font-size: var(--m4);

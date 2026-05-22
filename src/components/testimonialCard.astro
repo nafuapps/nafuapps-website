@@ -1,18 +1,20 @@
 ---
+import { Image } from "astro:assets"
+
 interface Props {
-  header: string;
-  subtitle1: string;
-  subtitle2: string;
-  avatarUrl?: string;
+  header: string
+  subtitle1: string
+  subtitle2: string
+  avatarUrl: ImageMetadata
 }
 
-const { header, subtitle1, subtitle2, avatarUrl } = Astro.props;
+const { header, subtitle1, subtitle2, avatarUrl } = Astro.props
 ---
 
 <div class="testimonial-card">
   <span class="testimonial-header">{header}</span>
   <div class="testimonial-content">
-    <img src={avatarUrl} alt="Testimonial Avatar" class="testimonial-icon" />
+    <Image src={avatarUrl} alt="Testimonial Avatar" class="testimonial-icon" />
     <span class="testimonial-subtitle">{subtitle1}<br /><i>{subtitle2}</i></span
     >
   </div>
@@ -56,7 +58,7 @@ const { header, subtitle1, subtitle2, avatarUrl } = Astro.props;
     color: var(--secondary-dark);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .testimonial-card {
       gap: 16px;
       padding: 32px 24px;

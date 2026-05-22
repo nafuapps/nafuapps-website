@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets"
+import { Image } from "astro:assets"
 import ActionButton from "../components/actionButton.astro"
 import PlanCard from "../components/planCard.astro"
 import PrimaryButton from "../components/primaryButton.astro"
@@ -39,6 +40,7 @@ import person1 from "../images/person1.jpeg"
 import person2 from "../images/person2.jpeg"
 import person3 from "../images/person3.jpeg"
 import landingFrame from "../images/LandingFrame.png"
+import SecondaryButton from "../components/secondaryButton.astro"
 ---
 
 <html lang="en">
@@ -77,12 +79,8 @@ import landingFrame from "../images/LandingFrame.png"
           class="header-left"
           onclick="document.getElementById('main').scrollIntoView()"
         >
-          <img src={brandLogo.src} alt="NaFu Apps Logo" class="brandLogo" />
-          <img
-            src={brandName.src}
-            alt="NaFu Apps Brand Name"
-            class="brandName"
-          />
+          <Image src={brandLogo} alt="NaFu Apps Logo" class="brandLogo" />
+          <Image src={brandName} alt="NaFu Apps Brand Name" class="brandName" />
         </div>
         <div class="header-right hide-menu" id="menu-list">
           <span
@@ -110,9 +108,10 @@ import landingFrame from "../images/LandingFrame.png"
             onclick="document.getElementById('works').scrollIntoView()"
             >WORKS</span
           >
+          <SecondaryButton linkUrl={"tel:+91-9840774089"} text="CALL NOW" />
         </div>
         <div class="header-menu" id="menu-button">
-          <img src={menu.src} alt="Navigation Menu" class="nav-menu" />
+          <Image src={menu} alt="Navigation Menu" class="nav-menu" />
         </div>
       </div>
       <div class="main-sections">
@@ -122,7 +121,7 @@ import landingFrame from "../images/LandingFrame.png"
             <span class="hero-text">but don't know where to start?</span>
             <span class="hero-text" id="text-pop">We will help you.</span>
           </div>
-          <img id="landingImg" src={landingFrame.src} alt="Landing Image" />
+          <Image id="landingImg" src={landingFrame} alt="Landing Image" />
           <!-- <div class="landing-break"></div> -->
           <div class="landing-title">
             <span class="hero-subtext"
@@ -138,22 +137,22 @@ import landingFrame from "../images/LandingFrame.png"
             />
             <ActionButton
               text="Discover More"
-              iconUrl={arrow.src}
+              iconUrl={arrow}
               linkUrl="#about"
             />
           </div>
           <div class="landing-strip">
-            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <Image class="strip-star" src={stripStar} alt="Star Icon" />
             <span class="strip-text">MOBILE APP</span>
-            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <Image class="strip-star" src={stripStar} alt="Star Icon" />
             <span class="strip-text">WEBSITE</span>
-            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <Image class="strip-star" src={stripStar} alt="Star Icon" />
             <span class="strip-text">UI/UX DESIGN</span>
-            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <Image class="strip-star" src={stripStar} alt="Star Icon" />
             <span class="strip-text hide-strip">CONSULTING</span>
-            <img
+            <Image
               class="strip-star hide-strip"
-              src={stripStar.src}
+              src={stripStar}
               alt="Star Icon"
             />
           </div>
@@ -169,17 +168,17 @@ import landingFrame from "../images/LandingFrame.png"
               <ReasonCard
                 header="EXPERIENCED"
                 subtitle="We are a dedicated team of developers, designers & product managers from Tier-1 colleges who have worked at some of the biggest startups in India"
-                reasonUrl={expIcon.src}
+                reasonUrl={expIcon}
               />
               <ReasonCard
                 header="AFFORDABLE"
                 subtitle="We know it is difficult to start a business and the initial phases are the most crucial part of the journey. That’s why we provide the most affordable services in the market"
-                reasonUrl={affIcon.src}
+                reasonUrl={affIcon}
               />
               <ReasonCard
                 header="PROFESSIONAL"
                 subtitle="We believe mutual trust comes from transparency. And that’s why our core values are based on honesty, empathy, punctuality and professionalism."
-                reasonUrl={proIcon.src}
+                reasonUrl={proIcon}
               />
             </div>
             <div class="about-testimonials">
@@ -187,19 +186,19 @@ import landingFrame from "../images/LandingFrame.png"
                 header="Very approachable, simple and value for money branding service.. Loved it!"
                 subtitle1="VRITI SHARMA, DELHI"
                 subtitle2="Beauty Parlor Manager"
-                avatarUrl={person1.src}
+                avatarUrl={person1}
               />
               <TestimonialCard
                 header="I asked Nafu apps to make a website for my shop.. now more customers are visiting."
                 subtitle1="JAGRIT KUMAR, AGRA"
                 subtitle2="Supermarket Owner"
-                avatarUrl={person2.src}
+                avatarUrl={person2}
               />
               <TestimonialCard
                 header="They built an app for my startup in 2 months. Works perfect, no bugs and awesome customer support."
                 subtitle1="AASHISH P, BENGALURU"
                 subtitle2="Healthcare Startup Founder"
-                avatarUrl={person3.src}
+                avatarUrl={person3}
               />
             </div>
           </div>
@@ -219,28 +218,28 @@ import landingFrame from "../images/LandingFrame.png"
           </span>
           <div class="services-content">
             <ServiceCard
-              iconUrl={websiteIcon.src}
+              iconUrl={websiteIcon}
               header="WEBSITE DEVELOPMENT"
               subtitle="Create amazing professional websites to quickly showcase your business online"
               tags={["Portfolio", "Online Shop", "Blog"]}
               numberStars={4}
             />
             <ServiceCard
-              iconUrl={appIcon.src}
+              iconUrl={appIcon}
               header="MOBILE & WEB APP DEVELOPMENT"
               subtitle="Build scalable mobile and web applications to interact with your customers"
               tags={["Startup MVP Apps", "B2B SaaS", "E-Commerce"]}
               numberStars={5}
             />
             <ServiceCard
-              iconUrl={uiuxIcon.src}
+              iconUrl={uiuxIcon}
               header="UI/UX DESIGN & BRANDING"
               subtitle="Enhance user experience with visually appealing digital assets for your brand"
               tags={["Graphic Design", "Design System", "Branding", "Logo"]}
               numberStars={4}
             />
             <ServiceCard
-              iconUrl={productIcon.src}
+              iconUrl={productIcon}
               header="PRODUCT CONSULTING"
               subtitle="Accelerate execution of your product roadmap to achieve user-centric results"
               tags={["Product Management", "Strategy", "Consulting"]}
@@ -340,7 +339,7 @@ import landingFrame from "../images/LandingFrame.png"
           <div class="process-content">
             <ProcessCard
               title="Connect"
-              iconUrl={connectIcon.src}
+              iconUrl={connectIcon}
               subtitle="Initial discovery call to gather requirements and discuss project goals, budget and timelines"
               outcomeText=" Draft proposal & rough estimate"
               paymentTag="Free of charge"
@@ -348,7 +347,7 @@ import landingFrame from "../images/LandingFrame.png"
             />
             <ProcessCard
               title="Commit"
-              iconUrl={commitIcon.src}
+              iconUrl={commitIcon}
               subtitle="Detailed discussion to freeze project deliverables and signing of contract to start the work"
               outcomeText="Legal agreement & project kick-off"
               paymentTag="10% advance payment"
@@ -356,7 +355,7 @@ import landingFrame from "../images/LandingFrame.png"
             />
             <ProcessCard
               title="Create"
-              iconUrl={createIcon.src}
+              iconUrl={createIcon}
               subtitle="Build consistently, iterate quickly and frequently communicate with the client to review progress"
               outcomeText="Regular status updates & feedback"
               paymentTag="40% mid-way payment"
@@ -364,7 +363,7 @@ import landingFrame from "../images/LandingFrame.png"
             />
             <ProcessCard
               title="Close"
-              iconUrl={closeIcon.src}
+              iconUrl={closeIcon}
               subtitle="Deliver completed project files with a live demo and provide post launch support"
               outcomeText="Project launch & final handover"
               paymentTag="50% final payment"
@@ -379,11 +378,11 @@ import landingFrame from "../images/LandingFrame.png"
             clients to <span id="works-pop">create some awesome stuff.</span>
           </span>
           <div class="works-content">
-            <img class="work-card" src={pmBG.src} alt="PM Work" />
-            <img class="work-card" src={etBG.src} alt="ET Work" />
-            <img class="work-card" src={fwBG.src} alt="FW Work" />
-            <img class="work-card" src={gjBG.src} alt="GJ Work" />
-            <img class="work-card" src={cmBG.src} alt="CM Work" />
+            <Image class="work-card" src={pmBG} alt="PM Work" />
+            <Image class="work-card" src={etBG} alt="ET Work" />
+            <Image class="work-card" src={fwBG} alt="FW Work" />
+            <Image class="work-card" src={gjBG} alt="GJ Work" />
+            <Image class="work-card" src={cmBG} alt="CM Work" />
           </div>
         </div>
         <div class="section" id="contact">
@@ -395,12 +394,12 @@ import landingFrame from "../images/LandingFrame.png"
           <div class="contact-cta">
             <ActionButton
               text="nafuapps@gmail.com"
-              iconUrl={mail.src}
+              iconUrl={mail}
               linkUrl="mailto:nafuapps@gmail.com"
             />
             <ActionButton
               text="91-9840774089"
-              iconUrl={phone.src}
+              iconUrl={phone}
               linkUrl="tel:91-9840774089"
             />
           </div>
@@ -410,29 +409,29 @@ import landingFrame from "../images/LandingFrame.png"
               href="https://github.com/nafuapps/"
               target="_blank"
             >
-              <img src={github.src} alt="Social Icon 1" class="social-icon" />
+              <Image src={github} alt="Social Icon 1" class="social-icon" />
             </a>
             <a
               class="social-cta"
               href="https://www.linkedin.com/company/nafu-apps"
               target="_blank"
             >
-              <img src={linkedin.src} alt="Social Icon 2" class="social-icon" />
+              <Image src={linkedin} alt="Social Icon 2" class="social-icon" />
             </a>
-            <a
+            <!-- <a
               class="social-cta"
               href="https://www.upwork.com/freelancers/~014bdb8d62716ae492"
               target="_blank"
             >
-              <img src={upwork.src} alt="Social Icon 3" class="social-icon" />
+              <Image src={upwork} alt="Social Icon 3" class="social-icon" />
             </a>
             <a
               class="social-cta"
               href="https://www.fiverr.com/users/nafuapps"
               target="_blank"
             >
-              <img src={fiverr.src} alt="Social Icon 4" class="social-icon" />
-            </a>
+              <Image src={fiverr} alt="Social Icon 4" class="social-icon" />
+            </a> -->
           </div>
           <div class="contact-footer"></div>
         </div>
@@ -482,15 +481,15 @@ import landingFrame from "../images/LandingFrame.png"
 
     /* Font sizes - desktop & mobile */
     --d1: 40px;
-    --d2: 32px;
-    --d3: 24px;
-    --d4: 18px;
+    --d2: 30px;
+    --d3: 22px;
+    --d4: 16px;
     --d5: 14px;
-    --m1: 28px;
-    --m2: 24px;
+    --m1: 36px;
+    --m2: 28px;
     --m3: 20px;
     --m4: 16px;
-    --m5: 14px;
+    --m5: 13px;
   }
 
   html {
@@ -545,6 +544,7 @@ import landingFrame from "../images/LandingFrame.png"
   }
   .nav-item {
     font-size: var(--d4);
+    white-space: nowrap;
     line-height: 24px;
     font-weight: 600;
     color: var(--primary);
@@ -609,6 +609,7 @@ import landingFrame from "../images/LandingFrame.png"
   }
   #landingImg {
     height: 200px;
+    width: auto;
   }
   .hero-text {
     font-size: var(--d1);
@@ -767,6 +768,7 @@ import landingFrame from "../images/LandingFrame.png"
     border-radius: 16px;
     box-sizing: border-box;
     width: 100%;
+    height: auto;
   }
   .contact-cta {
     display: flex;
@@ -821,7 +823,7 @@ import landingFrame from "../images/LandingFrame.png"
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .main-header {
       top: 24px;
       margin-left: 24px;
@@ -884,6 +886,7 @@ import landingFrame from "../images/LandingFrame.png"
     }
     #landingImg {
       height: 160px;
+      width: auto;
     }
     .landing-title {
       padding: 0px 24px;

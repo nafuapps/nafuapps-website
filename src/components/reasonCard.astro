@@ -1,16 +1,18 @@
 ---
+import { Image } from "astro:assets"
+
 interface Props {
-  header: string;
-  subtitle: string;
-  reasonUrl?: string;
+  header: string
+  subtitle: string
+  reasonUrl: ImageMetadata
 }
 
-const { header, subtitle, reasonUrl } = Astro.props;
+const { header, subtitle, reasonUrl } = Astro.props
 ---
 
 <div class="reason-card">
   <div class="reason-content">
-    <img src={reasonUrl} alt="Reason Icon" class="reason-card-icon" />
+    <Image src={reasonUrl} alt="Reason Icon" class="reason-card-icon" />
     <span class="reason-header">{header}</span>
   </div>
   <span class="reason-subtitle">{subtitle}</span>
@@ -51,7 +53,7 @@ const { header, subtitle, reasonUrl } = Astro.props;
     color: var(--grey1);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .reason-card {
       gap: 16px;
     }

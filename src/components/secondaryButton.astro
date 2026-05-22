@@ -1,26 +1,26 @@
 ---
 interface Props {
-  text: string;
-  linkUrl: string;
+  text: string
+  linkUrl: string
 }
 
-const { text, linkUrl } = Astro.props;
+const { text, linkUrl } = Astro.props
 ---
 
-<div class="secondary-button" onclick={linkUrl}>
+<a class="secondary-button" href={linkUrl}>
   {text}
-</div>
+</a>
 
 <style>
   .secondary-button {
     color: var(--primary);
     display: inline-flex;
     border: 1px solid var(--primary);
-    padding: 12px 32px;
+    padding: 4px 12px;
     border-radius: 16px;
     font-size: var(--d4);
     line-height: 38px;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -34,16 +34,16 @@ const { text, linkUrl } = Astro.props;
     background-color: var(--white0);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .secondary-button {
-      padding: 8px 16px;
+      padding: 3px 9px;
       font-size: var(--m4);
       line-height: 30px;
     }
   }
   @media (prefers-color-scheme: dark) {
     .secondary-button:hover {
-      background-color: var(--black2);
+      background-color: var(--black1);
     }
   }
 </style>

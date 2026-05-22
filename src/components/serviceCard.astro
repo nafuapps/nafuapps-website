@@ -1,19 +1,19 @@
 ---
+import { Image } from "astro:assets"
+import starUrl from "../images/Star.png"
 interface Props {
-  tags: string[];
-  iconUrl: string;
-  header: string;
-  subtitle: string;
-  numberStars: number;
+  tags: string[]
+  iconUrl: ImageMetadata
+  header: string
+  subtitle: string
+  numberStars: number
 }
 
-import starUrl from "../images/Star.png";
-
-const { iconUrl, header, subtitle, tags, numberStars } = Astro.props;
+const { iconUrl, header, subtitle, tags, numberStars } = Astro.props
 ---
 
 <div class="service-card">
-  <img src={iconUrl} class="service-icon-img" alt="Service Icon" />
+  <Image src={iconUrl} class="service-icon-img" alt="Service Icon" />
   <span class="service-header">{header}</span>
   <span class="service-subtitle">{subtitle}</span>
   <div class="service-tags">
@@ -22,7 +22,7 @@ const { iconUrl, header, subtitle, tags, numberStars } = Astro.props;
   <div class="service-stars">
     {
       Array.from({ length: numberStars }, (_, i) => (
-        <img class="star" src={starUrl.src} alt="Star image" />
+        <Image class="star" src={starUrl} alt="Star image" />
       ))
     }
   </div>
@@ -85,7 +85,7 @@ const { iconUrl, header, subtitle, tags, numberStars } = Astro.props;
     height: 24px;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .service-card {
       padding: 32px 24px;
       gap: 24px;

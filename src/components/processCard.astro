@@ -1,19 +1,21 @@
 ---
+import { Image } from "astro:assets"
+
 interface Props {
-  title: string;
-  iconUrl: string;
-  subtitle: string;
-  outcomeText: string;
-  paymentTag: string;
-  step: number;
+  title: string
+  iconUrl: ImageMetadata
+  subtitle: string
+  outcomeText: string
+  paymentTag: string
+  step: number
 }
 
-const { title, iconUrl, subtitle, outcomeText, paymentTag, step } = Astro.props;
+const { title, iconUrl, subtitle, outcomeText, paymentTag, step } = Astro.props
 ---
 
 <div class="process-card">
   <div class="process-header">
-    <img src={iconUrl} class="process-icon" alt="Process Icon" />
+    <Image src={iconUrl} class="process-icon" alt="Process Icon" />
     <span class="process-title">{title}</span>
   </div>
   <span class="process-subtitle">{subtitle}</span>
@@ -92,7 +94,7 @@ const { title, iconUrl, subtitle, outcomeText, paymentTag, step } = Astro.props;
     color: var(--primary);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .process-card {
       padding: 24px;
       gap: 24px;
